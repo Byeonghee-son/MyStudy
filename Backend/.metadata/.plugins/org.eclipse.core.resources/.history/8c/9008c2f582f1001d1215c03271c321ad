@@ -1,0 +1,36 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class 오븐시계 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int H = sc.nextInt();
+		int M = sc.nextInt();
+		int P = sc.nextInt();
+		int R = P / 60;
+		int C = P % 60;
+
+		if (P < 60) {
+			if (P + M < 60) {
+				M += P;
+			} else {
+				H++;
+				M = M + P - 60;
+			}
+		} else if (P >= 60) {
+			H = H + R;
+			M += C;
+			if (M >= 60) {
+				H++;
+				M -= 60;
+
+				
+			}
+		}
+		if (H >= 24) {
+			H -= 24;
+		}
+		System.out.println("오븐이 끝나는 시간은 " + H + "시 " + M + "분 입니다.");
+	}
+}

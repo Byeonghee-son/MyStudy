@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <h4 id="test">안녕하세요</h4>
+    <div class="alert-box" id="alert">
+        <p id="box1">Alert 박스</p>
+        <button id="closebt">X</button>
+    </div>
+    <button onClick="aOpen('아이디를 입력하세요', 'block')">버튼1</button>
+    <button onClick="aOpen('비번을 입력하세요','block')">버튼2</button>
+
+    <script>
+
+        document.getElementById('closebt').addEventListener('click', function () {
+            document.getElementById('alert').style.display = 'none';
+        });
+
+        function aOpen(txt, sd) {
+            document.getElementById('box1').innerHTML = txt;
+            document.getElementById('alert').style.display = sd;
+        }
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
